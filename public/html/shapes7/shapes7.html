@@ -1,0 +1,82 @@
+<html ng-app="myApp">
+
+<head>
+  
+    <link rel="stylesheet" style type="text/css" href="css/shapes_css.css">
+<script src="html/shapes7/shapeCtrl7.js"></script>
+    
+  
+</head>  
+<body>
+    <div class="container">
+    <div class="wrapper">
+    <div class="card unmatched" id="card1"></div>
+    <div class="card unmatched" id="card2"></div>
+    <div class="card unmatched" id="card3"></div>
+    <div class="card unmatched" id="card4"></div>
+    <div class="card unmatched" id="card5"></div>
+    <div class="card unmatched" id="card6"></div>
+    <div class="card unmatched" id="card7"></div>
+    <div class="card unmatched" id="card8"></div>
+    <div class="card unmatched" id="card9"></div>
+    <div class="card unmatched" id="card10"></div>
+    <div class="card unmatched" id="card11"></div>
+    <div class="card unmatched" id="card12"></div>
+    <div class="card unmatched" id="card13"></div>
+    <div class="card unmatched" id="card14"></div>
+    <div class="card unmatched" id="card15"></div>
+    <div class="card unmatched" id="card16"></div>
+    </div>
+  </div>
+  <div id="trybutton">
+    
+  </div>
+  <div id="homebutton"></div>
+   <!-- <div>
+    <input id="strtbutton" type="button" name="Start Game" value="Start Game" class="btn btn-info">
+  </div> -->
+ <!--ModalSuccess Start-->
+  <div class="modal fade" id="myModalSuccess" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" >
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Well Done!</h2>
+        </div>
+        <div class="modal-body">
+          <h3>That was easy. Try the next one.</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="nextlev1" class="btn1" data-dismiss="modal">Next Level</button>
+          <button type="button" id="gtm1" class="btn2" data-dismiss="modal">Go To Menu</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--ModalSuccess End-->
+  <!-- ModalFail Start -->
+ <div class="modal fade" id="myModalFail" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" >
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Oops!</h2>
+        </div>
+        <div class="modal-body">
+          <h3>You lost. Try Again or Quit?</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="tryagain1" class="btn1" data-dismiss="modal"> Try Again</button>
+          <button type="button" id="gtm2" class="btn2" data-dismiss="modal">Go To Menu</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

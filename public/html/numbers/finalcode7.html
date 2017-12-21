@@ -1,0 +1,71 @@
+<html ng-app="myApp">
+<head>
+<link rel="stylesheet" type="text/css" href="css/finalcodecss.css">
+<script src="html/numbers/finalcode7.js"></script>
+  </head>
+
+<body>
+
+       <div class="flex form-group" id="buttons" >
+            <button id="strt"  class=" form-control btn1" data-toggle="modal" onclick="nextLevel(100000,1000000)"> Start </button>
+            <button id="cancel1" class="btn2 form-control" onclick="window.location.href='#/'"> Cancel </button>
+       </div>
+  <div id="div1"></div>
+  <div class="modal fade" id="myModal" role="dialog">
+    
+    <!-- Modal Start-->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Number Memory Test</h2>
+            </div>
+            <div class="modal-body">
+                <h3>The average person can remember 7 number at once.What's the longest number you can memorize?</h3>
+            </div>
+            <div class="modal-footer">
+                 <button type="button" onclick="nextLevel(1,10)" class="btn1" data-dismiss="modal">Ready</button>
+                <button class="btn2" data-dismiss="modal" onclick="window.location.href='index.html'">Menu</button>
+            </div>
+        </div>
+     </div>
+  </div>
+
+<!-- Modal Accept Value-->
+
+    <div class="modal fade" id="myModalAccept" role="dialog">
+        <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header" >
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h2 class="modal-title">You Lost!</h2>
+               </div>
+               <div class="modal-body"><h3>Want to try again?</h3></div>
+               <div class="modal-footer">
+                   <button type="button" onclick="retry()" class="btn1" data-dismiss="modal">Yes</button>
+                   <button type="button" class="btn2" data-dismiss="modal" onclick="menu()">No</button>
+              </div>
+           </div>
+       </div>
+   </div>
+
+<!-- Modal Next Level-->
+  <div class="modal fade" id="myModalNext" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" >
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 <h2 class="modal-title">Well done!</h2>
+              </div>
+              <div class="modal-body"><h3 id="scr" ></h3><h3>Try the next one.</h3></div>
+              <div class="modal-footer">
+                  <button type="button" id="nxtlev" onclick="next()" class="btn3" data-dismiss="modal">Next</button>
+                  <button type="button" class="btn2" data-dismiss="modal" onclick="menu()">Menu</button>
+              </div>
+         </div>
+      </div>
+  </div>
+ 
+</body>
+</html>
+

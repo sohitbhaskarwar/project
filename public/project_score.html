@@ -1,0 +1,160 @@
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>REGISTRATION PAGE</title>
+<body>
+<head>REGISTRATION PAGE</head>
+<br>
+<br>
+<div ng-app="myApp1" ng-controller="myCtrl1">
+
+	<button ng-disabled="level_1" ng-click="level1()">LEVEL 1</button>
+	<button ng-disabled="level_2" ng-click="level2()">LEVEL 2</button>
+	<button ng-disabled="level_3" ng-click="level3()">LEVEL 3</button>
+	<button ng-disabled="level_4" ng-click="level4()">LEVEL 4</button>
+	<button ng-disabled="level_5" ng-click="level5()">LEVEL 5</button>	
+	<button ng-disabled="level_6" ng-click="level6()">LEVEL 6</button>
+	<button ng-disabled="level_7" ng-click="level7()">LEVEL 7</button>
+	<button ng-disabled="level_8" ng-click="level8()">LEVEL 8</button>
+	
+	
+</div>
+
+
+<script >
+
+
+var app = angular.module('myApp1',[]);
+
+
+app.controller('myCtrl1',function($http,$scope){
+	 var cmp1;
+	 var cmp2;
+	 var cmp3;
+	 var cmp4;
+	 
+	
+		
+	
+		
+		$http({
+		method : "GET",
+		url : "http://localhost:8082/extract/",
+	
+	}).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  
+		
+		cmp1 =  $scope.myWelcome[0].colors;
+		
+		
+		console.log(" "+cmp1);
+	  
+	  if(cmp1 < 1)
+			$scope.level_1 = true;
+		else
+			$scope.level_1 = false;
+			
+		if(cmp1 < 2)
+			$scope.level_2 = true;
+		else
+			$scope.level_2 = false;
+			
+		if(cmp1 < 3)
+			$scope.level_3 = true;
+		else
+			$scope.level_3 = false;
+			
+		if(cmp1 < 4)
+			$scope.level_4 = true;
+		else
+			$scope.level_4 = false;
+			
+		if(cmp1 < 5)
+			$scope.level_5 = true;
+		else
+			$scope.level_5 = false;
+			
+		if(cmp1 < 6)
+			$scope.level_6 = true;
+		else
+			$scope.level_6 = false;
+			
+		if(cmp1 < 7)
+			$scope.level_7 = true;
+		else
+			$scope.level_7 = false;
+			
+			
+		if(cmp1 < 8)
+			$scope.level_8 = true;
+		else
+			$scope.level_8 = false;
+	
+	  
+	  
+	  console.log($scope.myWelcome);
+	
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+	
+	
+	
+	$scope.level1 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute1.html";
+	}
+	
+	$scope.level2 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute2.html";
+	}
+	
+	$scope.level3 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute3.html";
+	}
+	
+	$scope.level4 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute4.html";
+	}
+	
+	$scope.level5 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute5.html";
+	}
+	
+	$scope.level6 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute6.html";
+	}
+		
+	$scope.level7 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute7.html";
+	}
+	
+	$scope.level8 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute8.html";
+	}
+		
+	 });
+
+
+</script>
+</body>
+
+</html>

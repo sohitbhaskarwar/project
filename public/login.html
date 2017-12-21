@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Averia+Sans+Libre|Kavivanar|Press+Start+2P|Racing+Sans+One|Ranchers|Russo+One|VT323" rel="stylesheet">
+	  <link href='https://fonts.googleapis.com/css?family=Suez One' rel='stylesheet'>
+</head>
+<!--<script src="html/mainpage/app.js"></script>-->
+<body ng-app="myApp">
+    <div ng-view></div>
+    <script>
+    	var app = angular.module('myApp', ["ngRoute"]);
+    	app.config(function($routeProvider){
+	$routeProvider
+	.when("/mainpage",{
+		templateUrl:"html/mainpage/mainpage.html"
+	})
+	.when("/",{
+		templateUrl:"html/mainpage/mainpage.html",
+		controller:"myCtrl_main"
+	})
+	.when("/abc1",{
+		templateUrl:"project_score_color.html",
+		controller:"myCtrl_color"
+		
+	})
+	.when("/abc2",{
+		templateUrl:"project_score_image.html",
+		controller:"myCtrl_image"
+		
+	})
+	.when("/abc3",{
+		templateUrl:"project_score_number.html",
+		controller:"myCtrl_number"
+		
+	})
+	.when("/abc4",{
+		templateUrl:"project_score_shapes.html",
+		controller:"myCtrl_shapes"
+		
+	})
+	.when("/xyz1",{
+		templateUrl:"html/word1/wordroute1.html",
+		controller:"myCtrl11"
+	})
+	.when("/xyz2",{
+		templateUrl:"html/word2/wordroute2.html",
+		controller:"myCtrl12"
+	})
+	.when("/xyz3",{
+		templateUrl:"html/word3/wordroute3.html",
+		controller:"myCtrl13"
+	})
+	.when("/xyz4",{
+		templateUrl:"html/word4/wordroute4.html",
+		controller:"myCtrl14"
+	})
+	.when("/xyz5",{
+		templateUrl:"html/word5/wordroute5.html",
+		controller:"myCtrl15"
+	})
+	.when("/xyz6",{
+		templateUrl:"html/word6/wordroute6.html",
+		controller:"myCtrl16"
+	})
+	.when("/xyz7",{
+		templateUrl:"html/word7/wordroute7.html",
+		controller:"myCtrl17"
+	})
+	.when("/xyz8",{
+		templateUrl:"html/word8/wordroute8.html",
+		controller:"myCtrl18"
+	})
+	.when("/xyz9",{
+		templateUrl:"html/numbers/finalcode1.html",
+		controller:"myCtrl19"
+		
+	})
+	.when("/xyz21",{
+		templateUrl:"html/numbers/finalcode2.html",
+		controller:"myCtrl20"
+		
+	})
+	.when("/xyz22",{
+		templateUrl:"html/numbers/finalcode3.html",
+		controller:"myCtrl21"
+		
+	})
+	.when("/xyz23",{
+		templateUrl:"html/numbers/finalcode4.html",
+		controller:"myCtrl22"
+		
+	})
+	.when("/xyz24",{
+		templateUrl:"html/numbers/finalcode5.html",
+		controller:"myCtrl23"
+		
+	})
+	.when("/xyz25",{
+		templateUrl:"html/numbers/finalcode6.html",
+		controller:"myCtrl24"
+		
+	})
+	.when("/xyz26",{
+		templateUrl:"html/numbers/finalcode7.html",
+		controller:"myCtrl25"
+		
+	})
+	.when("/xyz27",{
+		templateUrl:"html/numbers/finalcode8.html",
+		controller:"myCtrl26"
+		
+	})
+	.when("/xyz28",{
+		templateUrl:"html/numbers/finalcode9.html",
+		controller:"myCtrl27"
+		
+	})
+	.when("/xyz29",{
+		templateUrl:"html/numbers/finalcode10.html",
+		controller:"myCtrl28"
+		
+	})
+	.when("/xyz10",{
+		templateUrl:"html/images/MemoryGame.html",
+		
+	})
+	.when("/xyz11",{
+		templateUrl:"html/shapes1/shapes1.html",
+		controller:"myCtrl1"
+	})
+	.when("/xyz12",{
+		templateUrl:"html/shapes2/shapes2.html",
+		controller:"myCtrl2"
+		
+	})
+	.when("/xyz13",{
+		templateUrl:"html/shapes3/shapes3.html",
+		controller:"myCtrl3"
+	})
+	.when("/xyz14",{
+		templateUrl:"html/shapes4/shapes4.html",
+		controller:"myCtrl4"
+	})
+	.when("/xyz15",{
+		templateUrl:"html/shapes5/shapes5.html",
+		controller:"myCtrl5"
+	})
+	.when("/xyz16",{
+		templateUrl:"html/shapes6/shapes6.html",
+		controller:"myCtrl6"
+	})
+	.when("/xyz17",{
+		templateUrl:"html/shapes7/shapes7.html",
+		controller:"myCtrl7"
+	})
+	.when("/xyz18",{
+		templateUrl:"html/shapes8/shapes8.html",
+		controller:"myCtrl8"
+	})
+	.when("/xyz19",{
+		templateUrl:"html/shapes9/shapes9.html",
+		controller:"myCtrl9"
+	})
+	.when("/xyz20",{
+		templateUrl:"html/shapes10/shapes10.html",
+		controller:"myCtrl10"
+	})
+	
+	.otherwise({redirectTo:'/'});
+});
+
+    	app.controller('myCtrl_main',function($http,$scope){
+	 var cmp1;
+	 
+	 $http({
+		method : "GET",
+		url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/extract1/",
+	
+	}).then(function mySuccess(response) {
+      $scope.cmp1 = response.data;
+	  
+		console.log(" "+cmp1);
+	})
+});
+
+
+
+		app.controller('myCtrl_shapes',function($http,$scope){
+	 var cmp1;
+	 
+	 $http({
+		method : "GET",
+		url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/extract/",
+	
+	}).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  
+		
+		cmp1 =  $scope.myWelcome[0].shapes;
+		
+		
+		console.log(" "+cmp1);
+	  
+	  if(cmp1 < 1){
+			$scope.level_1 = true;
+			$scope.pqr1=2;
+	  }
+		else{
+			$scope.level_1 = false;
+
+		}
+			
+		if(cmp1 < 2){
+			$scope.level_2 = true;
+			$scope.pqr2=2;
+		}
+		else
+			$scope.level_2 = false;
+			
+		if(cmp1 < 3){
+			$scope.level_3 = true;
+			$scope.pqr3=2;
+		}
+		else
+			$scope.level_3 = false;
+			
+		if(cmp1 < 4){
+			$scope.level_4 = true;
+			$scope.pqr4=2;
+		}
+		else
+			$scope.level_4 = false;
+			
+		if(cmp1 < 5){
+			$scope.level_5 = true;
+			$scope.pqr5=2;
+		}
+		else
+			$scope.level_5 = false;
+			
+		if(cmp1 < 6){
+			$scope.level_6 = true;
+			$scope.pqr6=2;
+		}
+		else
+			$scope.level_6 = false;
+			
+		if(cmp1 < 7){
+			$scope.level_7 = true;
+			$scope.pqr7=2;
+		}
+		else
+			$scope.level_7 = false;
+			
+			
+		if(cmp1 < 8){
+			$scope.level_8 = true;
+			$scope.pqr8=2;
+		}
+		else
+			$scope.level_8 = false;
+
+		if(cmp1 < 9){
+			$scope.level_9 = true;
+			$scope.pqr9=2;
+		}
+		else
+			$scope.level_9 = false;
+
+		if(cmp1 < 10){
+			$scope.level_10 = true;
+			$scope.pqr10=2;
+		}
+		else
+			$scope.level_10 = false;
+	
+	  
+	  
+	  console.log($scope.myWelcome);
+	
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+	
+	
+	
+	$scope.level1 = function(){
+	window.location.href="#!xyz11";
+	}
+	
+	$scope.level2 = function(){
+	window.location.href="#!xyz12";
+	}
+	
+	$scope.level3 = function(){
+	window.location.href="#!xyz13";
+	}
+	
+	$scope.level4 = function(){
+	window.location.href="#!xyz14";
+	}
+	
+	$scope.level5 = function(){
+	window.location.href="#!xyz15";
+	}
+	
+	$scope.level6 = function(){
+	window.location.href="#!xyz16";
+	}
+		
+	$scope.level7 = function(){
+	window.location.href="#!xyz17";
+	}
+	
+	$scope.level8 = function(){
+	window.location.href="#!xyz18";
+	}
+
+	$scope.level9 = function(){
+	window.location.href="#!xyz19";
+	}
+
+	$scope.level10 = function(){
+	window.location.href="#!xyz20";
+	}
+		
+	 });
+
+
+app.controller('myCtrl_image',function($http,$scope){
+	 var cmp1;
+
+		$http({
+		method : "GET",
+		url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/extract/",
+	
+	}).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  
+		
+		cmp1 =  $scope.myWelcome[0].images;
+		
+		
+		console.log(" "+cmp1);
+	  
+	  if(cmp1 < 1)
+			$scope.level_1 = true;
+		else
+			$scope.level_1 = false;
+			
+		if(cmp1 < 2)
+			$scope.level_2 = true;
+		else
+			$scope.level_2 = false;
+			
+		if(cmp1 < 3)
+			$scope.level_3 = true;
+		else
+			$scope.level_3 = false;
+			
+		if(cmp1 < 4)
+			$scope.level_4 = true;
+		else
+			$scope.level_4 = false;
+			
+		if(cmp1 < 5)
+			$scope.level_5 = true;
+		else
+			$scope.level_5 = false;
+			
+		if(cmp1 < 6)
+			$scope.level_6 = true;
+		else
+			$scope.level_6 = false;
+			
+		if(cmp1 < 7)
+			$scope.level_7 = true;
+		else
+			$scope.level_7 = false;
+			
+			
+		if(cmp1 < 8)
+			$scope.level_8 = true;
+		else
+			$scope.level_8 = false;
+	
+	  
+	  
+	  console.log($scope.myWelcome);
+	
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+	
+	
+	
+	$scope.level1 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute1.html";
+	}
+	
+	$scope.level2 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute2.html";
+	}
+	
+	$scope.level3 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute3.html";
+	}
+	
+	$scope.level4 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute4.html";
+	}
+	
+	$scope.level5 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute5.html";
+	}
+	
+	$scope.level6 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute6.html";
+	}
+		
+	$scope.level7 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute7.html";
+	}
+	
+	$scope.level8 = function(){
+	
+	alert("qwert");
+	window.location.href="html/word3/wordroute8.html";
+	}
+		
+	 });
+
+
+app.controller('myCtrl_number',function($http,$scope){
+	 var cmp1;
+		$http({
+		method : "GET",
+		url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/extract/",
+	
+	}).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  
+		
+		cmp1 =  $scope.myWelcome[0].numb;
+		
+		
+		console.log(" "+cmp1);
+	  
+	  if(cmp1 < 1){
+			$scope.level_1 = true;
+			$scope.pqr1=2;
+	  }
+		else
+			$scope.level_1 = false;
+			
+		if(cmp1 < 2){
+			$scope.level_2 = true;
+			$scope.pqr2=2;
+		}
+		else
+			$scope.level_2 = false;
+			
+		if(cmp1 < 3){
+			$scope.level_3 = true;
+			$scope.pqr3=2;
+		}
+		else
+			$scope.level_3 = false;
+			
+		if(cmp1 < 4){
+			$scope.level_4 = true;
+			$scope.pqr4=2;
+		}
+		else
+			$scope.level_4 = false;
+			
+		if(cmp1 < 5){
+			$scope.level_5 = true;
+			$scope.pqr5=2;
+		}
+		else
+			$scope.level_5 = false;
+			
+		if(cmp1 < 6){
+			$scope.level_6 = true;
+			$scope.pqr6=2;
+		}
+		else
+			$scope.level_6 = false;
+			
+		if(cmp1 < 7){
+			$scope.level_7 = true;
+			$scope.pqr7=2;
+		}
+		else
+			$scope.level_7 = false;
+			
+			
+		if(cmp1 < 8){
+			$scope.level_8 = true;
+			$scope.pqr8=2;
+		}
+		else
+			$scope.level_8 = false;
+
+		if(cmp1 < 9){
+			$scope.level_9 = true;
+			$scope.pqr9=2;
+		}
+		else
+			$scope.level_9 = false;
+
+		if(cmp1 < 10){
+			$scope.level_10 = true;
+			$scope.pqr10=2;
+		}
+		else
+			$scope.level_10 = false;
+	
+	  
+	  
+	  console.log($scope.myWelcome);
+	
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+	
+	
+	
+	$scope.level1 = function(){
+	window.location.href="#!xyz9";
+	}
+	
+	$scope.level2 = function(){
+	window.location.href="#!xyz21";
+	}
+	
+	$scope.level3 = function(){
+	window.location.href="#!xyz22";
+	}
+	
+	$scope.level4 = function(){
+	window.location.href="#!xyz23";
+	}
+	
+	$scope.level5 = function(){
+	window.location.href="#!xyz24";
+	}
+	
+	$scope.level6 = function(){
+	window.location.href="#!xyz25";
+	}
+		
+	$scope.level7 = function(){
+	window.location.href="#!xyz26";
+	}
+	
+	$scope.level8 = function(){
+	window.location.href="#!xyz27";
+	}
+
+	$scope.level9 = function(){
+	window.location.href="#!xyz28";
+	}
+
+	$scope.level10 = function(){
+	window.location.href="#!xyz29";
+	}
+		
+	 });
+
+
+app.controller('myCtrl_color',function($http,$scope){
+	 var cmp1;
+	 
+	 $http({
+		method : "GET",
+		url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/extract/",
+	
+	}).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  
+		
+		cmp1 =  $scope.myWelcome[0].colors;
+		
+		
+		console.log(" "+cmp1);
+	  
+	  if(cmp1 < 1){
+			$scope.level_1 = true;
+			$scope.pqr1=2;
+	  }
+		else
+			$scope.level_1 = false;
+			
+		if(cmp1 < 2){
+			$scope.level_2 = true;
+			$scope.pqr2=2;
+		}
+		else
+			$scope.level_2 = false;
+			
+		if(cmp1 < 3){
+			$scope.level_3 = true;
+			$scope.pqr3=2;
+		}
+		else
+			$scope.level_3 = false;
+			
+		if(cmp1 < 4){
+			$scope.level_4 = true;
+			$scope.pqr4=2;
+		}
+		else
+			$scope.level_4 = false;
+			
+		if(cmp1 < 5){
+			$scope.level_5 = true;
+			$scope.pqr5=2;
+		}
+		else
+			$scope.level_5 = false;
+			
+		if(cmp1 < 6){
+			$scope.level_6 = true;
+			$scope.pqr6=2;
+		}
+		else
+			$scope.level_6 = false;
+			
+		if(cmp1 < 7){
+			$scope.level_7 = true;
+			$scope.pqr7=2;
+		}
+		else
+			$scope.level_7 = false;
+			
+			
+		if(cmp1 < 8){
+			$scope.level_8 = true;
+			$scope.pqr8=2;
+		}
+		else
+			$scope.level_8 = false;
+
+		if(cmp1 < 9){
+			$scope.level_9 = true;
+			$scope.pqr9=2;
+		}
+		else
+			$scope.level_9 = false;
+
+		if(cmp1 < 10){
+			$scope.level_10 = true;
+			$scope.pqr10=2;
+		}
+		else
+			$scope.level_10 = false;
+	
+	  
+	  
+	  console.log($scope.myWelcome);
+	
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+	
+	
+	
+	$scope.level1 = function(){
+	window.location.href="#!xyz1";
+	}
+	
+	$scope.level2 = function(){
+	window.location.href="#!xyz2";
+	}
+	
+	$scope.level3 = function(){
+	window.location.href="#!xyz3";
+	}
+	
+	$scope.level4 = function(){
+	window.location.href="#!xyz4";
+	}
+	
+	$scope.level5 = function(){
+	window.location.href="#!xyz5";
+	}
+	
+	$scope.level6 = function(){
+	window.location.href="#!xyz6";
+	}
+		
+	$scope.level7 = function(){
+	window.location.href="#!xyz7";
+	}
+	
+	$scope.level8 = function(){
+	window.location.href="#!xyz8";
+	}
+		
+	 });
+
+app.controller('myCtrl1',function($http,$scope){
+	var score12 = 1;
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,
+	  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);
+	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+ });
+
+
+app.controller('myCtrl2',function($http,$scope){
+	var score12 = 2;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl3',function($http,$scope){
+	var score12 = 3;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl4',function($http,$scope){
+	var score12 = 4;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl5',function($http,$scope){
+	var score12 = 5;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl6',function($http,$scope){
+	var score12 = 6;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl7',function($http,$scope){
+	var score12 = 7;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl8',function($http,$scope){
+	var score12 = 8;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl9',function($http,$scope){
+	var score12 = 9;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl10',function($http,$scope){
+	var score12 = 10;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_shapes/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl11',function($http,$scope){
+	var score12 = 1;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_color/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl12',function($http,$scope){
+	var score12 = 2;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_color/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl13',function($http,$scope){
+	var score12 = 3;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_color/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl14',function($http,$scope){
+	var score12 = 4;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_color/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl15',function($http,$scope){
+	var score12 = 5;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_color/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl16',function($http,$scope){
+	var score12 = 6;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_color/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl17',function($http,$scope){
+	var score12 = 7;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_color/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl18',function($http,$scope){
+	var score12 = 8;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_color/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl19',function($http,$scope){
+	var score12 = 1;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl20',function($http,$scope){
+	var score12 = 2;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl21',function($http,$scope){
+	var score12 = 3;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl22',function($http,$scope){
+	var score12 = 4;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl23',function($http,$scope){
+	var score12 = 5;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl24',function($http,$scope){
+	var score12 = 6;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl25',function($http,$scope){
+	var score12 = 7;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl26',function($http,$scope){
+	var score12 = 8;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl27',function($http,$scope){
+	var score12 = 9;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+app.controller('myCtrl28',function($http,$scope){
+	var score12 = 10;	
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/update_number/"+score12,	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });	
+	 });
+
+
+
+
+
+    </script>
+</body>
+</html>

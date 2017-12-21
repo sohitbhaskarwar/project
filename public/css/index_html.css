@@ -1,0 +1,104 @@
+body {
+    font-family:"Comic Sans MS", cursive, sans-serif; 
+    background-color: #81c784;
+}
+
+.bt {
+      border-radius: 8px;
+      font-size: 15px;
+      color: white;
+      text-align: center;
+      background-color: #00c853;
+      font-family:"Comic Sans MS", cursive, sans-serif; 
+      padding: 8px 8px;
+      align-content: center;
+    }
+.wrapper {
+  margin-top: 50px;
+  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  grid-auto-rows: 180px;
+
+  grid-template-areas: 
+    ". a b ."
+    ". c d ."; 
+}
+.card1{
+grid-area: a;
+ border-radius: 10px;
+ max-height: 150px;
+
+}
+.card2{
+  grid-area: b;
+   border-radius: 10px;
+   max-height: 150px;
+}
+.card3{
+  grid-area: c;
+  border-radius: 10px;
+  max-height: 150px;
+ 
+}
+.card4{
+    grid-area: d;
+    border-radius: 10px;
+    max-height: 150px;
+}
+
+.w3-container
+{
+  text-align: center;
+  background-color: #004d40;
+  font-family: "Comic Sans MS", cursive, sans-serif; 
+
+}
+
+.w3-button
+{
+  background-color: #81c784;
+  margin-bottom: 8px;
+  color: #3a3a4c ;
+  border-radius: 8px;
+  font-family: 'Kavivanar', cursive;
+}
+
+
+h1{
+  color:#81c784;
+font-family: 'Kavivanar', cursive;
+
+
+}
+
+h2{
+  color:#000000;
+font-family: 'Kavivanar', cursive;
+align-content: center;
+text-align: center;
+}
+
+h3{
+color: #81c784;;
+font-family: 'Kavivanar', cursive;
+}
+p{
+  color: #81c784;
+}
+
+h5 {
+  color: #d7ccc8;
+}
+
+.bt {
+      border-radius: 8px;
+      font-size: 15px;
+      color: white;
+      text-align: center;
+      background-color: #00c853;
+      font-family:"Comic Sans MS", cursive, sans-serif; 
+      padding: 8px 8px;
+      align-content: center;
+    }

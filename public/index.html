@@ -1,0 +1,97 @@
+<html>
+<head>
+	  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="procss.css">
+	 <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Averia+Sans+Libre|Kavivanar|Press+Start+2P|Racing+Sans+One|Ranchers|Russo+One|VT323" rel="stylesheet">
+	  <link href='https://fonts.googleapis.com/css?family=Suez One' rel='stylesheet'>
+</head>
+<title>REGISTRATION PAGE</title>
+<body>
+<h1>Let's Play Total Recall</h1>
+<br>
+<br>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<center>
+	<div>
+	<h3>Enter Username</h3><input type="text" ng-model="username" placeholder="Type here!"><br>
+	<br>
+	<button ng-click="login()" class="bt">Log In</button>
+	<button ng-click="add()" class="bt2">Register</button>
+	<!--<button ng-click="view()">display</button> -->
+</div>
+</div>
+</center>
+
+<script >
+
+
+var app = angular.module('myApp',[]);
+
+app.controller('myCtrl',function($http,$scope){
+	var sss ;
+	$scope.view = function(){
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/view/"+$scope.username,
+	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  console.log($scope.myWelcome);
+	  sss=$scope.myWelcome;
+	  console.log(sss[0].score);
+	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+	
+	}
+	
+	$scope.add = function(){
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/add/"+$scope.username,
+	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  
+	  alert($scope.myWelcome);
+	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+	}
+	
+	
+	$scope.login = function(){
+	
+	$http({
+    method : "GET",
+    url : "http://ec2-34-209-125-251.us-west-2.compute.amazonaws.com:8082/login/"+$scope.username,
+	
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+	  
+	  if($scope.myWelcome!=0)
+		{
+			console.log($scope.myWelcome);
+			alert("Login Successfull");
+			window.location.href="login.html"
+		}
+	else
+		alert("USERNAME DOESNOT EXIST");
+	  
+	 
+	  }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+  });
+	}
+});
+
+</script>
+</body>
+
+</html>

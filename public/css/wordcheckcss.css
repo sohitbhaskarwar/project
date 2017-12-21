@@ -1,0 +1,111 @@
+body{
+		background-color: #81c784;
+}
+
+input{
+		text-transform: uppercase;
+}
+
+.modal-header{
+	background-color: #43a047;
+    color:white;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px
+}
+
+.modal-content{
+	border-radius:22px;
+	background-color:#3e2723;
+}
+
+.modal-body{
+	background-color:#75a478;
+	font-family: "Comic Sans MS", cursive, sans-serif; 
+}
+
+.modal-title{
+	color:white;
+	font-family: "Comic Sans MS", cursive, sans-serif; 
+}
+
+.modal-footer{
+	background-color:#75a478;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px
+}	
+
+#myProgress {
+  width: 100%;
+  background-color: #558b2f;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #33691e;
+}
+
+#msg {
+border: 2px solid;
+text-align: center; 
+color: #3e2723;
+font-family: "Comic Sans MS", cursive, sans-serif; 
+}
+
+#div1{
+	border:2px solid;
+	border-color: #3e2723;
+	text-align: center; 
+	
+}
+
+h1{
+  font-family: 'Suez One';
+}
+
+
+#table tr:nth-child(even) {
+background-color: #00c853 ;
+}
+#table{
+		border: 2px solid;
+	color: #3e2723;
+}
+#table tr:nth-child(odd) {
+	background-color: #108237;
+}
+
+
+/* .btn {
+
+       border-radius: 8px;
+   		font-size: 15px;
+   		color: white;
+   		text-align: center;
+   		background-color: #00c853;
+   		font-family:"Comic Sans MS", cursive, sans-serif; 
+
+    }
+ */
+.btn1 {
+   		border-radius: 8px;
+   		font-size: 15px;
+   		color: white;
+   		text-align: center;
+   		background-color: #00c853;
+   		font-family:"Comic Sans MS", cursive, sans-serif; 
+   		padding: 8px 8px;
+   	}
+  
+ .btn2 {
+   		border-radius: 8px;
+   		color: white;
+   		font-size: 15px;
+   		text-align: center;
+   		background-color: #b71c1c;
+   		font-family:"Comic Sans MS", cursive, sans-serif; 
+   		padding: 8px 15px;
+   	}
+
+
+

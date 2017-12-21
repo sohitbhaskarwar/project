@@ -19,8 +19,8 @@ app.get('/', function (req, res) {
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "sohit1234",
-  database: "asd"
+  password: "system",
+  database: "sys"
 });
 
 
@@ -170,6 +170,6 @@ function display1(req,res){
   
   var server = app.listen(8082,listening);
 function listening(){
-	console.log("LISTENING....8082");
+	console.log("ec2-34-209-125-251.us-west-2.compute.amazonaws.com    LISTENING....8082");
 }
   
